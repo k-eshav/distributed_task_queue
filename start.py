@@ -12,6 +12,7 @@ if __name__ == "__main__":
     logging.basicConfig(format=format, level=logging.INFO,
                         datefmt="%H:%M:%S")
 
+<<<<<<< HEAD
     threads = list()
     for index in range(3):
         logging.info("Main    : create and start thread %d.", index)
@@ -23,3 +24,12 @@ if __name__ == "__main__":
         logging.info("Main    : before joining thread %d.", index)
         thread.join()
         logging.info("Main    : thread %d done", index)
+=======
+    logging.info("Main    : before creating thread")
+    x = threading.Thread(target=thread_function, args=(1,))
+    logging.info("Main    : before running thread")
+    x.start()
+    logging.info("Main    : wait for the thread to finish")
+    # x.join()
+    logging.info("Main    : all done")
+>>>>>>> 82689762decca166dc90ebdc60ba041da8d1137f
